@@ -1,10 +1,10 @@
-import "./App.css";
-
+import s from "./App.module.css";
+import Card from "./components/card/Card";
 function App() {
   return (
-    <>
-      <h1>Hola</h1>
-    </>
+    <div className={s.containerApp}>
+      <Card />
+    </div>
   );
 }
 
