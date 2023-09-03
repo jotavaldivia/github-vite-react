@@ -1,5 +1,4 @@
-import { PropsWithChildren, createContext, useEffect, useState } from "react";
-import { getProfile } from "../services/profile";
+import { PropsWithChildren, createContext, useState } from "react";
 
 interface ProfileContextProps {
   avatar_url: string;
@@ -32,15 +31,8 @@ const ProfileContext = createContext({});
 export function ProfileProvider({ children }: PropsWithChildren) {
   const [data, setData] = useState([InitialState]);
   const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    getProfile("jotavaldivia").then((response) => {
-      setData(response);
-      setLoading(true);
-    });
-  }, []);
-
   return (
-    <ProfileContext.Provider value={{ data, loading }}>
+    <ProfileContext.Provider value={{ data, setData, loading, setLoading }}>
       {children}
     </ProfileContext.Provider>
   );

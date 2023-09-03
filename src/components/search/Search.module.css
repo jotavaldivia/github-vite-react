@@ -33,6 +33,28 @@
   padding-left: 15px;
 }
 
+/* Estilos base para el botón tipo GitHub */
+.button {
+  background-color: #2ea44f; /* Color de fondo verde */
+  color: #ffffff; /* Color de texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 6px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+/* Estilos para el botón cuando se pasa el mouse por encima */
+.button:hover {
+  background-color: #247b3e; /* Color de fondo más oscuro al pasar el mouse por encima */
+}
+
+/* Estilos para el botón cuando se hace clic */
+.button:active {
+  transform: translateY(1px); /* Efecto de clic al presionar el botón */
+}
+
 /* mobile */
 
 @media (max-width: 500px) {

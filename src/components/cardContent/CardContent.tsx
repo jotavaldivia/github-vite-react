@@ -1,25 +1,13 @@
 import { useContext } from "react";
 import ProfileContext from "../../context/profile";
+import { ProfileContextProps } from "../../types";
+import s from "./CardContent.module.css";
+import spinner from "../../assets/spinner.gif";
 const CardContent = () => {
-  type ProfileContextProps = {
-    data: {
-      avatar_url: string;
-      name: string;
-      tml_url: string;
-      bio: string;
-      location: string;
-      company: string | null;
-      public_repos: number;
-      followers: number;
-      following: number;
-      blog: string;
-    };
-    loading: boolean;
-  };
   const { data, loading } = useContext(ProfileContext) as ProfileContextProps;
 
   return (
-    <div>
+    <div className={s.containerContent}>
       {loading ? (
         <div>
           <img src={data.avatar_url} alt="avatar" />
@@ -33,8 +21,9 @@ const CardContent = () => {
           <p>{data.blog}</p>
         </div>
       ) : (
-        <div>
-          <p>Loading...</p>
+        <div className={s.containerLoading}>
+          <p>Busca información resumida de cualquier perfil de GitHub</p>
+          <img src={spinner} />
         </div>
       )}
     </div>
