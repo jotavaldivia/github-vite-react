@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    width: 90%;
+    min-height: 55%;
+    background-color: var(--bg-terciario);
+}
+
+.bio{
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bio img{
+    width: 100px;
+    border-radius: 50px;
+}
+
+.info{
+
+}

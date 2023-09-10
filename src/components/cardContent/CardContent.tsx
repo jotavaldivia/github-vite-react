@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import ProfileContext from "../../context/profile";
+import s from './CardContent.module.css'
 const CardContent = () => {
   type ProfileContextProps = {
     data: {
       avatar_url: string;
       name: string;
-      tml_url: string;
+      html_url: string;
       bio: string;
       location: string;
       company: string | null;
@@ -19,19 +20,24 @@ const CardContent = () => {
   const { data, loading } = useContext(ProfileContext) as ProfileContextProps;
 
   return (
-    <div>
+    <div className={s.container}>
       {loading ? (
-        <div>
+      <>
+          <div className={s.bio}>
           <img src={data.avatar_url} alt="avatar" />
           <h1>{data.name}</h1>
+          <p>{data.html_url}</p>
           <p>{data.bio}</p>
+          <p>{data.blog}</p>
+          </div>
+          <div className={s.info}>
           <p>{data.location}</p>
           <p>{data.company}</p>
           <p>{data.public_repos}</p>
           <p>{data.followers}</p>
           <p>{data.following}</p>
-          <p>{data.blog}</p>
-        </div>
+          </div>
+          </>
       ) : (
         <div>
           <p>Loading...</p>
